@@ -12,6 +12,7 @@ our @EXPORT = qw(
     IntField
 
     PasswordField
+    HiddenField
 
     FileField
     ImageField
@@ -53,6 +54,10 @@ sub IntField {
 
 sub PasswordField {
     _input(type => 'password', @_);
+}
+
+sub HiddenField {
+    _input(type => 'hidden', @_);
 }
 
 sub FileField {

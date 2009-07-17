@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use CGI;
 use HTML::Shakan;
-use Test::More tests => 13;
+use Test::More tests => 14;
 
 sub trim {
     local $_ = shift;
@@ -20,6 +20,7 @@ is $form->widgets->render( $form, UIntField( name => 'foo', id => 'name_field' )
 is $form->widgets->render( $form, IntField( name => 'foo', id => 'name_field' ) ), '<input id="name_field" name="foo" type="text" />';
 is $form->widgets->render( $form, URLField( name => 'foo', id => 'name_field' ) ), '<input id="name_field" name="foo" type="text" />';
 is $form->widgets->render( $form, PasswordField( name => 'foo', id => 'name_field' ) ), '<input id="name_field" name="foo" type="password" />';
+is $form->widgets->render( $form, HiddenField( name => 'foo', id => 'name_field' ) ), '<input id="name_field" name="foo" type="hidden" />';
 is $form->widgets->render( $form, FileField( name => 'foo', id => 'name_field' ) ), '<input id="name_field" name="foo" type="file" />';
 is $form->widgets->render( $form, ImageField( name => 'foo', id => 'name_field' ) ), '<input id="name_field" name="foo" type="file" />';
 is $form->widgets->render( $form, TextField( name => 'foo', id => 'name_field', widget => 'textarea' ) ), '<textarea id="name_field" name="foo"></textarea>';
