@@ -128,6 +128,10 @@ TextField() + INT constraint
 
 define <input type="password" /> field
 
+=item HiddenField(name => 'pw')
+
+define <input type="hidden" /> field
+
 =item FileField(name => 'file')
 
 define <input type="fiel" /> field
