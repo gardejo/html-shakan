@@ -94,7 +94,7 @@ HTML::Shakan::Fields - fields
 
 =head1 DESCRIPTION
 
-This module exports some functions, that generates a instance of HTML::Field::*.
+This module exports some functions, that generates a instance of HTML::Shakan::Field::*.
 
 If you want to know the details, please look the source :)
 
@@ -104,9 +104,9 @@ If you want to know the details, please look the source :)
 
 =item TextField(name => 'foo')
 
-create a instance of HTML::Shakan::Input.
+create a instance of HTML::Shakan::Field::Input.
 
-This is same as HTML::Shakan::Input->new(name => 'foo', type => 'text', @_);
+This is same as HTML::Shakan::Field::Input->new(name => 'foo', type => 'text', @_);
 
 =item EmailField(name => 'email')
 
@@ -128,9 +128,11 @@ TextField() + INT constraint
 
 define <input type="password" /> field
 
-=item HiddenField(name => 'pw')
+=item HiddenField(name => 'foo')
 
 define <input type="hidden" /> field
+
+This is same as HTML::Shakan::Field::Input->new(name => 'foo', type => 'hidden', @_);
 
 =item FileField(name => 'file')
 

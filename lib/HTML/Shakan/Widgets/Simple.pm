@@ -71,12 +71,15 @@ sub widget_radio {
     my $choices = delete $field->{choices};
 
     my $value = $form->fillin_param($field->{name});
+    my %attr = %{ $field->attr };
+    delete $attr{id} if exists $attr{id};
 
     my @t;
     push @t, "<ul>";
     while (my ($a, $b) = splice @$choices, 0, 2) {
         push @t, sprintf(
-            q{<li><label><input type="radio" value="%s"%s />%s</label></li>},
+            q{<li><label><input %s type="radio" value="%s"%s />%s</label></li>},
+            _attr(\%attr),
             encode_entities($a),
             ($value && $value eq $a ? ' checked="checked"' : ''),
             encode_entities($b)
